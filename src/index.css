@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Orivana Global - Luxury Real Estate Design System
+   Premium aesthetic with gold accents, deep navy, and elegant typography
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Deep navy and warm gold */
+    --background: 33 47% 96%;
+    --foreground: 213 13% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 13% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 13% 14%;
+
+    /* Primary - Deep Navy */
+    --primary: 204 100% 6%;
+    --primary-foreground: 33 47% 96%;
+
+    /* Secondary - Warm off-white */
+    --secondary: 36 34% 90%;
+    --secondary-foreground: 213 13% 14%;
+
+    /* Muted - Subtle grays */
+    --muted: 36 30% 91%;
+    --muted-foreground: 213 8% 40%;
+
+    /* Accent - Luxurious Gold */
+    --accent: 41 48% 58%;
+    --accent-foreground: 204 100% 6%;
+
+    /* Gold palette for luxury elements */
+    --gold: 41 48% 58%;
+    --gold-light: 42 52% 72%;
+    --gold-dark: 38 42% 45%;
+
+    /* Avishkar Infra orange (partner brand) */
+    --brand-orange: 24 91% 52%;
+    
+    /* Success color for form feedback */
+    --success: 142 71% 45%;
+
+    /* Navy palette */
+    --navy: 204 100% 6%;
+    --navy-light: 204 35% 16%;
+    --navy-dark: 200 90% 3%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 30% 86%;
+    --input: 36 30% 86%;
+    --ring: 41 48% 58%;
+
+    --radius: 0.375rem;
+
+    /* Custom gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(41 48% 58%), hsl(42 52% 72%));
+    --gradient-navy: linear-gradient(180deg, hsl(204 100% 6%), hsl(200 90% 3%));
+    --gradient-hero: linear-gradient(180deg, rgba(0, 17, 28, 0.65) 0%, rgba(0, 17, 28, 0.9) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(33 47% 98%) 100%);
+
+    /* Shadows for depth */
+    --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 8px 24px -8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.18);
+    --shadow-gold: 0 8px 32px -8px hsla(41, 48%, 58%, 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 204 100% 6%;
+    --sidebar-foreground: 33 47% 96%;
+    --sidebar-primary: 41 48% 58%;
+    --sidebar-primary-foreground: 204 100% 6%;
+    --sidebar-accent: 204 35% 14%;
+    --sidebar-accent-foreground: 33 47% 96%;
+    --sidebar-border: 204 35% 18%;
+    --sidebar-ring: 41 48% 58%;
+  }
+
+  .dark {
+    --background: 204 100% 5%;
+    --foreground: 33 47% 96%;
+
+    --card: 204 60% 8%;
+    --card-foreground: 33 47% 96%;
+
+    --popover: 204 60% 8%;
+    --popover-foreground: 33 47% 96%;
+
+    --primary: 41 48% 58%;
+    --primary-foreground: 204 100% 6%;
+
+    --secondary: 204 35% 15%;
+    --secondary-foreground: 33 47% 96%;
+
+    --muted: 204 35% 15%;
+    --muted-foreground: 36 15% 62%;
+
+    --accent: 41 48% 58%;
+    --accent-foreground: 204 100% 6%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 204 35% 18%;
+    --input: 204 35% 18%;
+    --ring: 41 48% 58%;
+
+    --sidebar-background: 204 100% 5%;
+    --sidebar-foreground: 33 47% 96%;
+    --sidebar-primary: 41 48% 58%;
+    --sidebar-primary-foreground: 204 100% 6%;
+    --sidebar-accent: 204 35% 13%;
+    --sidebar-accent-foreground: 33 47% 96%;
+    --sidebar-border: 204 35% 18%;
+    --sidebar-ring: 41 48% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Elegant serif for main headings (Devanagari falls back gracefully) */
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', 'Inter', serif;
+    font-weight: 600;
+  }
+  h1, h2 {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-accent/30;
+  }
+}
+
+@layer components {
+  /* Section styling */
+  .section-padding {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Rich text styling */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-navy/80 border border-white/10;
+  }
+
+  /* Luxury card styling */
+  .luxury-card {
+    @apply rounded-2xl border border-border/60 shadow-md hover:shadow-luxury transition-all duration-500;
+    background: var(--gradient-card);
+  }
+  .luxury-card:hover { transform: translateY(-4px); border-color: hsl(var(--gold) / 0.4); }
+
+  /* Hero overlay */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    @apply h-1 w-20 rounded-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), hsl(var(--gold-light)), hsl(var(--gold)), transparent);
+  }
+
+  /* Section eyebrow badge */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 px-4 py-2 mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark rounded-full border border-gold/30 bg-gold/10;
+  }
+
+  /* Subtle film-grain overlay for premium depth */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* Dark navy panel with gold glow */
+  .navy-panel {
+    @apply relative overflow-hidden;
+    background:
+      radial-gradient(60% 80% at 100% 0%, hsl(var(--gold) / 0.18), transparent 60%),
+      radial-gradient(50% 70% at 0% 100%, hsl(var(--gold) / 0.10), transparent 60%),
+      linear-gradient(160deg, hsl(204 60% 9%), hsl(200 90% 3%));
+  }
+
+
+  /* Button gold glow on hover */
+  .gold-glow {
+    @apply transition-shadow duration-300;
+  }
+  .gold-glow:hover {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* Animation delays for staggered effects */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
